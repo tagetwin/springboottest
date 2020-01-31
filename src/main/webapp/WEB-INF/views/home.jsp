@@ -35,7 +35,7 @@
 				type : 'DELETE',
 				url:'/home/hello',
 				data:JSON.stringify(data),
-				contentType :'application/json; charget=utf-8',
+				contentType :'application/json; charset=utf-8',
 				dataType:'json'
 			}).done(function(result){
 				if(result.statusCode == 200) {
@@ -59,7 +59,7 @@
 					type : 'POST',
 					url:'/home/hello',
 					data:JSON.stringify(data),
-					contentType :'application/json; charget=utf-8',
+					contentType :'application/json; charset=utf-8',
 					dataType:'json'
 				}).done(function(result){
 					if(result.statusCode == 200) {
@@ -85,7 +85,7 @@
 					type : 'PUT',
 					url:'/home/hello',
 					data:JSON.stringify(data),
-					contentType :'application/json; charget=utf-8',
+					contentType :'application/json; charset=utf-8',
 					dataType:'json'
 				}).done(function(result){
 					if(result.statusCode == 200) {
