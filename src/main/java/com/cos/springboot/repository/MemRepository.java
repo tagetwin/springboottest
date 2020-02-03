@@ -2,7 +2,6 @@ package com.cos.springboot.repository;
 
 import java.util.List;
 
-import com.cos.springboot.dto.RequestMemDelDto;
 import com.cos.springboot.dto.RequestMemJoinDto;
 import com.cos.springboot.dto.RequestMemUpdateDto;
 import com.cos.springboot.model.Mem;
@@ -18,5 +17,5 @@ public interface MemRepository {
 	// 회원수정
 	int update(RequestMemUpdateDto requestMemUpdateDto);
 	// 회원삭제
-	int delete(RequestMemDelDto requestMemDelDto);
+	int delete(int id);
 }

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cos.springboot.dto.RequestMemDelDto;
 import com.cos.springboot.dto.RequestMemJoinDto;
 import com.cos.springboot.dto.RequestMemUpdateDto;
 import com.cos.springboot.model.Mem;
@@ -30,7 +29,7 @@ public class MemController {
 	// username, password, email
 	
 	@GetMapping("/mem/join")
-	public String mems() {
+	public String mem_join() {
 
 		return "mem/join";
 	}
@@ -77,10 +76,21 @@ public class MemController {
 			return new ResponseEntity<String>("fail", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
-	@DeleteMapping("/mem/api/update")
-	public @ResponseBody ResponseEntity<?> deleteProc(@RequestBody RequestMemDelDto requestMemDelDto) {
+//	@DeleteMapping("/mem/api/update")
+//	public @ResponseBody ResponseEntity<?> deleteProc(@RequestBody RequestMemDelDto requestMemDelDto) {
+//
+//		int result = memRepository.delete(requestMemDelDto);
+//
+//		if(result == 1) {
+//			return new ResponseEntity<String>("ok", HttpStatus.OK);			
+//		}else
+//			return new ResponseEntity<String>("fail", HttpStatus.INTERNAL_SERVER_ERROR);
+//	}
+	
+	@DeleteMapping("/mem/api/delete/{id}")
+	public @ResponseBody ResponseEntity<?> deleteProc(@PathVariable int id) {
 
-		int result = memRepository.delete(requestMemDelDto);
+		int result = memRepository.delete(id);
 
 		if(result == 1) {
 			return new ResponseEntity<String>("ok", HttpStatus.OK);			

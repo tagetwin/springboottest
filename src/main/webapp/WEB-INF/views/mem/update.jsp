@@ -67,16 +67,12 @@
 
 		$('#mem_delete_proc').on('click',function(){
 
-			let data = {
-					id : $('#id').val()
-			}
+			let id = $('#id').val()
 
 			$.ajax({
 				
 				type : 'DELETE',
-				url : '/mem/api/update',
-				data : JSON.stringify(data),
-				contentType : 'application/json; charset=utf-8',
+				url : '/mem/api/delete/'+id,
 				dataType : 'text'					
 				
 			}).done(function(result){
@@ -86,7 +82,7 @@
 					location.href='/mem'					
 				}else {
 					console.log(result);
-					alert('회원정정보삭제 실패');
+					alert('회원정보삭제 실패');
 				}
 				
 			}).fail(function(result){
