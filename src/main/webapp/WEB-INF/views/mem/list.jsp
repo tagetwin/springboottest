@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<img src="media/apple.jpg">
 	<table border="1">
 		<tr>
 			<th>username</th>

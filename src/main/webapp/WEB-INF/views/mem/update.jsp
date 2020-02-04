@@ -48,10 +48,10 @@
 				url : '/mem/api/update',
 				data : JSON.stringify(data),
 				contentType : 'application/json; charset=utf-8',
-				dataType : 'text'					
+				dataType : 'json'					
 				
 			}).done(function(result){
-				if(result === 'ok') {
+				if(result.msg === 'ok') {
 					console.log(result);
 					alert('회원정보수정 성공');
 					location.href='/mem'					
@@ -73,10 +73,10 @@
 				
 				type : 'DELETE',
 				url : '/mem/api/delete/'+id,
-				dataType : 'text'					
+				dataType : 'json'					
 				
 			}).done(function(result){
-				if(result === 'ok') {
+				if(result.msg === 'ok') {
 					console.log(result);
 					alert('회원정보삭제 성공');
 					location.href='/mem'					
